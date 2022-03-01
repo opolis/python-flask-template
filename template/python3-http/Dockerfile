@@ -1,5 +1,5 @@
-FROM openfaas/of-watchdog:0.7.7 as watchdog
 ARG PYTHON_VERSION=3.7
+FROM openfaas/of-watchdog:0.7.7 as watchdog
 FROM python:${PYTHON_VERSION}-alpine
 
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
